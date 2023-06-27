@@ -28,16 +28,16 @@ layout = dbc.Col([
 
 #====== Secao Novo ======#
 
-            dbc.Row({
+            dbc.Row([
+                dbc.Col([
+                    dbc.Button(color="success", id="open-receita",
+                            children=["+ Receita"]),
+                ], width=6),
 
                 dbc.Col([
-                    dbc.Button(color='success', id='open_receita',
-                               children=['+ Receita'])
-                ], width=6),
-                dbc.Col([
-                    dbc.Button(color='danger', id='open_dispesa',
-                               children=['- Despesa'])
+                    dbc.Button(color="danger", id="open-despesa",
+                            children=["+ Despesa"]),
                 ], width=6)
-            })
+            ]),
 
 ])
