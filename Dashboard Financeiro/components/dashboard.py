@@ -18,10 +18,10 @@ layout = dbc.Col([
         dbc.Row([
             dbc.Col([
                 dbc.CardGroup([
-                    dbc.Card([
+                    dbc.Card([asdasd
 
                     ]),
-                
+
                 ])
             ])
         ])
