@@ -15,5 +15,14 @@ import pandas as pd
 
 #============ Layout ============#
 layout = dbc.Col([
-        html.H5("Dashboards")
+        dbc.Row([
+            dbc.Col([
+                dbc.CardGroup([
+                    dbc.Card([
+
+                    ]),
+                
+                ])
+            ])
+        ])
 ])
