@@ -15,6 +15,7 @@ content = html.Div(id="page-content")
 
 app.layout = dbc.Container(children=[
     dbc.Row([
+        
         dbc.Col([
             dcc.Location(id='url'),
             sidebar.layout
