@@ -79,12 +79,12 @@ layout = dbc.Col([
                             persistence=True,
                             persistence_type="session",
                             multi=True
-                        ),
-                    )
-                    html.Label("Categoria das Receitas"),
+                            ),
+                    ),
+                    html.Label("Categoria das Despesas"),
                     html.Div(
                         dcc.Dropdown(
-                            id="dropdown-receita",
+                            id="dropdown-despesa",
                             clearable=False,
                             style={"width": "100%"},
                             persistence=True,
@@ -92,7 +92,6 @@ layout = dbc.Col([
                             multi=True
                             ),
                         )
-
                 ])
             ])
         ])
