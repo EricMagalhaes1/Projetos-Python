@@ -86,12 +86,11 @@ layout = dbc.Col([
                     #    dcc.Dropdown(
                     #        id="dropdown-despesa",
                     #        clearable=False,
-                            style={"width": "100%"},
-                            persistence=True,
-                            persistence_type="session",
-                            multi=True
-                            ),#
-                        )
+                    #        style={"width": "100%"},
+                    #        persistence=True,
+                    #        persistence_type="session",
+                    #       ),
+                    # )
                 ])
             ])
         ])
