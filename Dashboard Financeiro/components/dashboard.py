@@ -84,8 +84,8 @@ layout = dbc.Col([
                     html.Label("Categoria das Despesas"),
                     #html.Div(
                     #    dcc.Dropdown(
-                            id="dropdown-despesa",
-                            clearable=False,
+                    #        id="dropdown-despesa",
+                    #        clearable=False,
                             style={"width": "100%"},
                             persistence=True,
                             persistence_type="session",
