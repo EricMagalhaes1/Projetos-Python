@@ -79,7 +79,7 @@ layout = dbc.Col([
                             persistence=True,
                             persistence_type="session",
                             multi=True
-                            ),
+                            )
                     ),
                     html.Label("Categoria das Despesas"),
                         html.Div(
@@ -89,8 +89,19 @@ layout = dbc.Col([
                             style={"width": "100%"},
                             persistence=True,
                             persistence_type="session",
-                           ),
-                     )
+                            multi=True)
+                     ),
+                    html.Legend("Período de Análize", style={"margin-top": "10px"}),
+                    dcc.DatePickerRange(
+                        month_format='Do MMM, YY',
+                        end_date_placeholder_text='Data...',
+                        start_date=(2023, 1, 1).date(),
+                        end_date=datetime.today + timedelta(days=31),
+                        updatemode='singledate',
+                        id='date-picker-config',
+                        style={'z-index':'100'}
+                    ), 
+
                 ])
             ])
         ])
