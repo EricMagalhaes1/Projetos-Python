@@ -15,5 +15,7 @@ import pandas as pd
 
 #============ Layout ============#
 layout = dbc.Col([
-        html.H5("Pagina Extratos")
+        dbc.Row({
+            html.Legend('Tabela de Despesas')
+        })
 ])
