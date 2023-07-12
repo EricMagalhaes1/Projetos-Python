@@ -1,21 +1,38 @@
-import os
 import dash
-from dash import html, dcc
-from dash.dependencies import Input, Output, State
-import dash_bootstrap_components as dbc
+from dash.dependencies import Input, Output
+from dash import dash_table
 from dash.dash_table.Format import Group
-from app import app
-
-from datetime import datetime, date
+from dash import dcc
+from dash import html
+import dash_bootstrap_components as dbc
 import plotly.express as px
-import numpy as np
 import pandas as pd
 
+from app import app
+from dash_bootstrap_templates import template_from_url, ThemeChangerAIO
 
-
-#============ Layout ============#
+# =========  Layout  =========== #
 layout = dbc.Col([
-        dbc.Row({
-            html.Legend('Tabela de Despesas')
-        })
-])
+    dbc.Row([
+        html.Legend("Tabela de despesas"),
+        html.Div(id="tabela-despesas", className="dbc"),
+    ]),
+
+    dbc.Row([
+        dbc.Col([
+            dcc.Graph(id='bar-graph', style={"margin-right": "20px"}),
+        ], width=9),
+
+        dbc.Col([
+            dbc.Card(
+                dbc.CardBody([
+                    html.H4("Despesas"),
+                    html.Legend("R$ -", id="valor_despesa_card", style={'font-size': '60px'}),
+                    html.H6("Total de despesas"),
+                ], style={'text-align': 'center', 'padding-top': '30px'}))
+        ], width=3),
+    ]),
+], style={"padding": "10px"})
+
+
+

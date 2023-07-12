@@ -208,7 +208,7 @@ layout = dbc.Col([
             html.Hr(),
             dbc.Nav(
             [
-                dbc.NavLink("Dashboard", href="/dashboard", active="exact"),
+                dbc.NavLink("Dashboard", href="/dashboards", active="exact"),
                 dbc.NavLink("Extratos", href="/extratos", active="exact"),
             ], vertical=True,pills=True, id='nav_buttons',style={"margin-botton" : "50px"}),
 
