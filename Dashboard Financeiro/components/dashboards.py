@@ -51,7 +51,6 @@ layout = dbc.Col([
                             )])
                     ], width=4),
 
-                    # Despesa
                 dbc.Col([
                     dbc.CardGroup([
                         dbc.Card([
