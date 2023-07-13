@@ -22,8 +22,6 @@ card_icon = {
 layout = dbc.Col([
         dbc.Row([
             dbc.Col([
-
-                # Saldo
                 dbc.CardGroup([
                     dbc.Card([
                         html.Legend("Saldo"),
@@ -36,8 +34,6 @@ layout = dbc.Col([
                     )])
 
                 ],width=4),
-                # Receita
-
                 dbc.Col([
                     dbc.CardGroup([
                             dbc.Card([
