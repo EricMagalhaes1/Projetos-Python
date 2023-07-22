@@ -29,7 +29,7 @@ app.layout = dbc.Container(children=[
 
 @app.callback(Output("page-content", "children"), [Input("url", "pathname")])
 def render_page_content(pathname):
-    if pathname == "/dashboards" or  pathname == "/":
+    if pathname == "/dashboards" :
         return dashboards.layout
 
     if pathname == "/extratos":
