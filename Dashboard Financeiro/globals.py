@@ -24,3 +24,11 @@ if('df_cat_despesas.cvs' in os.listdir()) and ('df_cat_receitas.csv' in os.listd
 
 else:
     cat_receitas = {'Categorias': ['Salário','Investimentos', 'Comissão']}
+    cat_despesas ={'Categorias':['Alimentação', 'Aluguel', 'Gasolina', 'Saúde', 'Lazer']}
+
+    df_cat_receitas = pd.DataFrame(cat_receitas)
+    df_cat_despesas = pd.DataFrame(cat_despesas)
+    df_cat_receitas.to_csv('df_cat_receitas.csv')
+    df_cat_despesas.to_csv('df_cat_despesas.csv')
+
+
