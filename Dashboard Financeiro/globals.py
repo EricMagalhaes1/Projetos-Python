@@ -20,7 +20,9 @@ else:
 
 if('df_cat_despesas.cvs' in os.listdir()) and ('df_cat_receitas.csv' in os.listdir()):
     df_cat_receitas = pd.read_csv('df_cat_receitas.cvs', index_col=0)
-    df_cat_receitas = pd.read_csv('df_cat_receitas.cvs', index_col=0)
+    df_cat_despesas = pd.read_csv('df_cat_despesas.cvs', index_col=0)
+    cat_receitas = df_cat_receitas.values.tolist()
+    cat_despesas = df_cat_despesas.values.tolist()
 
 else:
     cat_receitas = {'Categorias': ['Salário','Investimentos', 'Comissão']}
