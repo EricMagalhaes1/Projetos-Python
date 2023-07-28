@@ -3,13 +3,14 @@ import dash
 from dash import html, dcc
 from dash.dependencies import Input, Output, State
 import dash_bootstrap_components as dbc
-from app import app
+from app import app 
 
 from datetime import datetime, date
 import plotly.express as px
 import numpy as np
 import pandas as pd
 
+from globals import *
 
 #============ Layout ============#
 
@@ -75,7 +76,9 @@ layout = dbc.Col([
 
                     dbc.Col([
                         html.Label('Categoria da Receita'),
-                        dbc.Select(id='select_receita', options=[],value=[])
+                        dbc.Select(id='select_receita',
+                        options=[{"label": i, "value": i} for i in cat_receita],
+                        value=[])
                     ],width=4)
                 ],style={"margin-top": "25px"}),
 
