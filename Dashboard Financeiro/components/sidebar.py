@@ -3,12 +3,13 @@ import dash
 from dash import html, dcc
 from dash.dependencies import Input, Output, State
 import dash_bootstrap_components as dbc
-from app import app 
+from app import app
 
 from datetime import datetime, date
 import plotly.express as px
 import numpy as np
 import pandas as pd
+import pdb
 
 from globals import *
 
@@ -66,19 +67,19 @@ layout = dbc.Col([
 
                     dbc.Col([
                         dbc.Label("Extras"),
-                        dbc.Checklist(
-                            options=[],
-                            value=[],
-                            id='swiches-input-receitas',
-                            switch=True
-                        )
-                    ],width=4),
+                            dbc.Checklist(
+                                options=[{"label": "Foi recebida", "value": 1},
+                                {"label": "Receita Recorrente", "value": 2}],
+                                value=[1],
+                                id="switches-input-receita",
+                                switch=True),
+                            ], width=4),
 
                     dbc.Col([
                         html.Label('Categoria da Receita'),
                         dbc.Select(id='select_receita',
                         options=[{"label": i, "value": i} for i in cat_receita],
-                        value=[])
+                        value=cat_receita[0])
                     ],width=4)
                 ],style={"margin-top": "25px"}),
 
@@ -161,7 +162,9 @@ layout = dbc.Col([
 
                     dbc.Col([
                         html.Label('Categoria da Despesa'),
-                        dbc.Select(id='select_despesa', options=[],value=[])
+                        dbc.Select(id='select_despesa',
+                            options=[{"label": i, "value": i} for i in cat_despesa],
+                            value=cat_despesa[0])
                     ],width=4)
                 ],style={"margin-top": "25px"}),
 
@@ -242,3 +245,21 @@ def toggle_modal(n1, is_open):
 def toggle_modal(n1, is_open):
     if n1:
         return not is_open
+
+
+# Enviar Form receita
+@app.callback(
+    Output('store-receitas', 'data'),
+
+    Input("salvar_receita", "n_clicks"),
+
+    [
+        State("txt-receita", "value"),
+        State("valor_receita", "value"),
+        State("date-receitas", "date"),
+        State("switches-input-receita", "value"),
+        State("select_receita", "value"),
+        State('store-receitas', 'data')
+    ]
+)
+
