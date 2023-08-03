@@ -15,17 +15,20 @@ def get_message():
     nome_usuario = os.getlogin()
     message.config(text='Olá ' + nome_usuario)
 
-def get_data()
+def get_data():
     data_atual = strftime(' %a, %d %b %Y')
     data.config(text= data_atual)
 
+tela = tk.Canvas(root, width=600, height=60, )
+tela.pack()
+
 message =  Label(root, bg='#1d1d1d',fg='#8e27ea', font=('Montserrat', 16))
 message.pack()
-data = Label(root, bg='#1d1d1d',fg='#8e27ea', font=('Montserrat', 14))
 
+data = Label(root, bg='#1d1d1d',fg='#8e27ea', font=('Montserrat', 14))
 data.pack(pady=2)
 
 get_message()
-
+get_data()
 
 root.mainloop()
