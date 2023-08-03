@@ -19,7 +19,12 @@ def get_data():
     data_atual = strftime(' %a, %d %b %Y')
     data.config(text= data_atual)
 
-tela = tk.Canvas(root, width=600, height=60, )
+def get_horas():
+    horas_atual = strftime('%H:%M:%S')
+    horas.config(text = horas_atual)
+
+
+tela = tk.Canvas(root, width=600, height=60, bg='#1d1d1d', highlightthickness=0, relief='ridge')
 tela.pack()
 
 message =  Label(root, bg='#1d1d1d',fg='#8e27ea', font=('Montserrat', 16))
@@ -28,7 +33,12 @@ message.pack()
 data = Label(root, bg='#1d1d1d',fg='#8e27ea', font=('Montserrat', 14))
 data.pack(pady=2)
 
+horas = Label(root, bg='#1d1d1d',fg='#8e27ea', font=('Montserrat', 60))
+horas.pack(pady=2)
+
+
 get_message()
 get_data()
+get_horas()
 
 root.mainloop()
