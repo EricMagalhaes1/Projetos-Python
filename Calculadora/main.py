@@ -29,6 +29,5 @@ root = tk.Tk()
 root.geometry('300x275')
 root.maxsize(300, 275)
 
-
-
+root.mainloop()
 
