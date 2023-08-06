@@ -31,22 +31,22 @@ class Bird:
         self.height = self.y
         self.img_count = 0
         self.img = self.IMGS[0]
-    
+
     def jump(self):
         self.vel = -10.5
-        self.tick_count = 0 
+        self.tick_count = 0
         self.height = self.y
 
     def move(self):
         self.tick_count += 1
-        
+
         d =  self.vel*self.tick_count + 1.5*self.tick_count**2
         #-10.5 + 1.5 = -9
 
         if d >= 16:
             d = 16
         if d < 0:
-            d -=2 
+            d -=2
 
         self.y = self.y + d
 
@@ -56,7 +56,7 @@ class Bird:
         else:
             if self.tilt > -90:
                 self.tilt -= self.ROT_VEL
-    
+
     def draw(self, win):
         self.img_count += 1
 
@@ -71,11 +71,11 @@ class Bird:
         elif self.img_count ==  self.ANIMATION_TIME*4 +1:
             self.img = self.IMGS[0]
             self.img_count = 0
-    
+
         if self.tilt <= -80:
             self.img = self.IMGS[1]
             self.img_count = self.ANIMATION_TIME*2
-        
+
         roteted_image = pygame.transform.rotate(self.img,self.tilt)
         new_rect = roteted_image.get_rect(center=self.img.get_rect(topleft = (self.x, self.y)).center)
         win.blit(roteted_image, new_rect.topleft)
@@ -89,7 +89,7 @@ class Pipe:
     VEL = 5
 
     def __init__(self, x):
-        self.x = x 
+        self.x = x
         self.height = 0
 
         self.top = 0
@@ -104,7 +104,7 @@ class Pipe:
         self.height = random.randrange(50,450)
         self.top = self.height - self.PIPE_TOP.get_height()
         self.botton = self.height + self.GAP
-    
+
     def move (self):
         self.x -= self.VEL
 
@@ -125,9 +125,9 @@ class Pipe:
 
         if t_point or b_point:
             return True
-        
+
         return False
-        
+
 
 class Base:
     VEL = 5
@@ -135,35 +135,35 @@ class Base:
     IMG = BASE_IMG
 
     def __init__(self, y):
-        self.y = y 
+        self.y = y
         self.x1 = 0
         self.x2 = self.WIDTH
 
     def move (self):
         self.x1 -= self.VEL
         self.x2 -= self.VEL
-        
+
         if self.x1 + self.WIDTH < 0:
             self.x1 = self.x2 +self.WIDTH
 
         if self.x2 + self.WIDTH < 0:
             self.x2 = self.x1 +self.WIDTH
-    
+
     def draw(self,win):
         win.blit(self.IMG, (self.x1, self.y))
         win.blit(self.IMG, (self.x2, self.y))
-        
+
 
 def draw_window(win, bird, pipes, base, score):
     win.blit(BG_IMG, (0,0))
-    
+
     for pipe in pipes:
         pipe.draw(win)
 
 
         text = STAT_FONT.render("Score: " + str(score), 1,(255,255,255))
         win.blit(text,(WIN_WIDTH - 10 - text.get_width(), 10))
-    
+
     base.draw(win)
 
     bird.draw(win)
@@ -185,7 +185,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
-    
+
 
         #bird.move()
         add_pipe = False
@@ -193,7 +193,7 @@ def main():
         for pipe in pipes:
             if pipe.collide(bird):
                 pass
-            
+
             if pipe.x + pipe.PIPE_TOP.get_width() < 0:
                 rem.append(pipe)
             if not pipe.passed and pipe.x < bird.x:
@@ -204,9 +204,9 @@ def main():
         if add_pipe:
             score += 1
             pipes.append(Pipe(600))
-        
+
         for r in rem:
-            pipes.remove(r)  
+            pipes.remove(r)
 
             if bird.y + bird.img.get_height() >= 730:
                 pass
