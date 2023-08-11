@@ -7,7 +7,7 @@ def pegar_info(nome_arquivo):
         dic_arquivo = xd.parse(arquivo_xml)
         print(dic_arquivo)
 
-listar_arquivos = os.listdir
+#listar_arquivos = os.listdir
 
 for arquivos in listar_arquivos:
     pegar_info(arquivos)
