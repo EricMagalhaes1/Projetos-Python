@@ -12,12 +12,12 @@ if ("df_despesas.csv" in os.listdir()) and ("df_receitas.csv" in os.listdir()):
 
 
 else:
-    data_structure = {'Valor':[],
-        'Efetuado':[],
-        'Fixo':[],
-        'Data':[],
-        'Categoria':[],
-        'Descrição':[],}
+    data_structure = {'Valor' : [],
+        'Efetuado' : [],
+        'Fixo' : [],
+        'Data' : [],
+        'Categoria' : [],
+        'Descrição' : [],}
 
     df_receitas = pd.DataFrame(data_structure)
     df_despesas = pd.DataFrame(data_structure)
