@@ -19,7 +19,7 @@ card_icon = {
     "margin": "auto",
 }
 
-graph_margin=dict(l=25, r=25, t=25, b=0)
+graph_margin = dict(l=25, r=25, t=25, b=0)
 
 
 # =========  Layout  =========== #
