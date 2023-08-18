@@ -6,7 +6,7 @@ import pandas as pd
 import plotly.express as px
 
 from app import *
-from components import sidebar, dashboards, extratos
+from components import dashboards, extratos, sidebar
 
 from globals import *
 
