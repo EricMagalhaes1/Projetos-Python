@@ -298,8 +298,8 @@ def salve_form_receita(n, descricao, valor, date, switches, categoria, dict_rece
     Input("salvar_despesa", "n_clicks"),
 
     [
-        #   State("txt-despesa", "value"),
-        State("valor_despesa", "value"),
+        #State("txt-despesa", "value"),
+        #State("valor_despesa", "value"),
         State("date-despesas", "date"),
         State("switches-input-despesa", "value"),
         State("select_despesa", "value"),
