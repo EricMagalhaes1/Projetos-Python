@@ -8,6 +8,7 @@ if ("df_despesas.csv" in os.listdir()) and ("df_receitas.csv" in os.listdir()):
     df_receitas["Data"] = pd.to_datetime(df_receitas["Data"])
     df_despesas["Data"] = df_despesas["Data"].apply(lambda x: x.date())
     df_receitas["Data"] = df_receitas["Data"].apply(lambda x: x.date())
+    
 
 else:
     data_structure = {'Valor':[],

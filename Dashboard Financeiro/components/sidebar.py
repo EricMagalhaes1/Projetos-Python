@@ -164,7 +164,7 @@ layout = dbc.Col([
                             dbc.Label("Opções Extras"),
                             dbc.Checklist(
                                 options=[{"label": "Foi recebida", "value": 1},
-                                    {"label": "despesa Recorrente", "value": 2}],
+                                    {"label": "Despesa Recorrente", "value": 2}],
                                 value=[1],
                                 id="switches-input-despesa",
                                 switch=True),
@@ -207,7 +207,7 @@ layout = dbc.Col([
                             ], flush=True, start_collapsed=True, id='accordion-despesa'),
 
                         dbc.ModalFooter([
-                            dbc.Button("Adicionar despesa", color="error", id="salvar_despesa", value="despesa"),
+                            dbc.Button("Adicionar despesa", id="salvar_despesa", value="despesa", color="success"),
                             dbc.Popover(dbc.PopoverBody("Despesa Salva"), target="salvar_despesa", placement="left", trigger="click"),
                         ]
                         )
