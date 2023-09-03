@@ -190,7 +190,7 @@ layout = dbc.Col([
                                         ], width=6),
 
                                         dbc.Col([
-                                            html.Legend("Excluir categorias", style={'color': 'red'}),
+                                            html.Legend(" ir categorias", style={'color': 'red'}),
                                             dbc.Checklist(
                                                 id="checklist-selected-style-despesa",
                                                 options=[{"label": i, "value": i} for i in cat_despesa],
@@ -322,3 +322,13 @@ def salve_form_receita(n, descricao, valor, date, switches, categoria, dict_desp
 
     data_return = df_despesas.to_dict()
     return data_return
+
+
+@app.callback(
+    [
+        Output('select_despesas', 'options'),
+        Output('checklist-selected-style-despesas', 'options'),
+        Output('checklist-selected-style-despesas', 'value'),
+        Output('stored-cat-despesas', 'data')
+    ]
+)
