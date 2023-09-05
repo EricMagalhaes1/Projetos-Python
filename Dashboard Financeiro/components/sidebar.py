@@ -337,5 +337,4 @@ def salve_form_receita(n, descricao, valor, date, switches, categoria, dict_desp
     [State("input-add-despesa", 'value'),
      State('checklist-selected-style-despesa', 'value'),
      State('stored-cat-despesas', 'data')]
-     
 )
