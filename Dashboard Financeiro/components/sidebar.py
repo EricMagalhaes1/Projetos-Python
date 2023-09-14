@@ -344,4 +344,12 @@ def add_category(n, n2, txt, check_delete, data):
 
     pdb.set_trace()
 
+    if n and not(txt =="" or txt == None):
+        cat_despesa = cat_despesa + [txt] if txt not in cat_despesa else cat_despesa
+
+    if n2:
+        if len(check_delete) > 1:
+            cat_despesa = [i for i in cat_despesa if i not in check_delete]  
+
+
     return
