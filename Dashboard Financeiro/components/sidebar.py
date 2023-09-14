@@ -350,6 +350,4 @@ def add_category(n, n2, txt, check_delete, data):
     if n2:
         if len(check_delete) > 1:
             cat_despesa = [i for i in cat_despesa if i not in check_delete]  
-
-
     return
