@@ -25,9 +25,6 @@ layout = dbc.Col([
                 children=[html.Img(src='/assets/img_hom.png',id='avatar_change', alt='Avatar', className='perfil_avatar',),
             ], style={'background-color':'transparent', 'border-color':'transparent'}),
 
-
-
-
 #====== Seção Novo ======#
 
             dbc.Row([
@@ -41,7 +38,6 @@ layout = dbc.Col([
                             children=["+ Despesa"]),
                 ], width=6)
             ]),
-
             # Modal Receita
             html.Div([
                 dbc.Modal([
@@ -57,7 +53,6 @@ layout = dbc.Col([
                                     dbc.Input(placeholder="$100.00", id="valor_receita", value="")
                             ], width=6)
                         ]),
-
                         dbc.Row([
                             dbc.Col([
                                 dbc.Label("Data: "),
@@ -131,8 +126,6 @@ layout = dbc.Col([
                 centered=True,
                 backdrop=True)
             ]),
-
-
 
             ### Modal Despesa ###
             dbc.Modal([
@@ -227,13 +220,7 @@ layout = dbc.Col([
                 dbc.NavLink("Dashboards", href="/dashboards", active="exact"),
                 dbc.NavLink("Extratos", href="/extratos", active="exact"),
             ], vertical=True,pills=True, id='nav_buttons',style={"margin-botton" : "50px"}),
-
-
 ],id="sidebar_completa")
-
-
-
-
 
 #======  Callbacks  ======#
 #PopUp Receitas
@@ -256,7 +243,6 @@ def toggle_modal(n1, is_open):
     if n1:
         return not is_open
 
-
 # Enviar Form receita
 @app.callback(
     Output('store-receitas', 'data'),
@@ -272,6 +258,7 @@ def toggle_modal(n1, is_open):
         State('store-receitas', 'data')
     ]
 )
+
 def salve_form_receita(n, descricao, valor, date, switches, categoria, dict_receitas):
     df_receitas = pd.DataFrame(dict_receitas)
 
@@ -288,8 +275,6 @@ def salve_form_receita(n, descricao, valor, date, switches, categoria, dict_rece
 
     data_return = df_receitas.to_dict()
     return data_return
-
-
 
 # Enviar Form despesa
 @app.callback(
@@ -322,7 +307,6 @@ def salve_form_receita(n, descricao, valor, date, switches, categoria, dict_desp
 
     data_return = df_despesas.to_dict()
     return data_return
-
 
 @app.callback(
     [
