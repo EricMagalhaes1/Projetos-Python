@@ -316,7 +316,8 @@ def salve_form_receita(n, descricao, valor, date, switches, categoria, dict_desp
         Output('stored-cat-despesas', 'data')
     ],
     [Input("add-category-despesa", "n_click"),
-    Input("remove-category-despesa", 'n_clicks')],
+    Input("remove-category-despesa", 'n_clicks')]
+    ,
 
     [State("input-add-despesa", 'value'),
      State('checklist-selected-style-despesa', 'value'),
@@ -333,5 +334,5 @@ def add_category(n, n2, txt, check_delete, data):
 
     if n2:
         if len(check_delete) > 1:
-            cat_despesa = [i for i in cat_despesa if i not in check_delete]  
+            cat_despesa = [i for i in cat_despesa if i not in check_delete ]  
     return
