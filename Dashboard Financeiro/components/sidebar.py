@@ -324,6 +324,7 @@ def salve_form_receita(n, descricao, valor, date, switches, categoria, dict_desp
      State('stored-cat-despesas', 'data')]
 ) 
 def add_category(n, n2, txt, check_delete, data):
+    
     import pdb
     cat_despesa = list(data["Categoria"].values())
 
