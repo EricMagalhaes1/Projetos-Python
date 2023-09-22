@@ -310,10 +310,12 @@ def salve_form_receita(n, descricao, valor, date, switches, categoria, dict_desp
 
 @app.callback(
     [
+
         Output('select_despesas', 'options'),
         Output('checklist-selected-style-despesas', 'options'),
         Output('checklist-selected-style-despesas', 'value'),
         Output('stored-cat-despesas', 'data')
+        
     ],
     [Input("add-category-despesa", "n_click"),
     Input("remove-category-despesa", 'n_clicks')]
