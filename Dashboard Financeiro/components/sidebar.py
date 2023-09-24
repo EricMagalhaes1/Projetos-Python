@@ -324,7 +324,6 @@ def salve_form_receita(n, descricao, valor, date, switches, categoria, dict_desp
      State('stored-cat-despesas', 'data')]
 ) 
 def add_category(n, n2, txt, check_delete, data):
-    
     import pdb
     cat_despesa = list(data["Categoria"].values())
 
@@ -336,4 +335,12 @@ def add_category(n, n2, txt, check_delete, data):
     if n2:
         if len(check_delete) > 1:
             cat_despesa = [i for i in cat_despesa if i not in check_delete ]  
-    return
+
+    otp_despesa = [{"label": i, "value": i} for i in cat_despesa]
+    df_cat_despesa = pd.DataFrame(cat_despesa, columns=['Categoria'])
+    df_cat_despesa.to_csv("df_cat_despesa.csv")
+    data_return = df_cat_despesa.to_dict()
+
+
+    
+    return [otp_despesa, otp_despesa, []]
