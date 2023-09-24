@@ -116,3 +116,19 @@ layout = dbc.Col([
             dbc.Col(dbc.Card(dcc.Graph(id="graph4"), style={"padding": "10px"}), width=3),
         ], style={"margin": "10px"})
     ])
+
+
+
+@app.callback([Output("dropdown-receita", "options"),
+    Output("dropdown-receita", "value"),
+    Output("p-receita-dashboard")],
+    Input("store-receitas", 'data'))
+
+def populate_dropdownvalues(data):
+    import pdb
+    df = pd.DataFrame(data)
+    valor = df['Valor'].sum()
+    val = df.Categoria.unique().tolist
+    pdb.set_trace()
+
+    return
