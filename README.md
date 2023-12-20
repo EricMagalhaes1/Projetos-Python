@@ -1,1 +1,1 @@
-Repository where I post some of my Python projects 
+Repository where I post of my Python projects 
